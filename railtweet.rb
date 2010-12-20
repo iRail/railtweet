@@ -1,5 +1,6 @@
+require 'rubygems'
 require 'active_support'
-require "rexml/document"
+#require "rexml/document"
 require 'net/http'
 
 class Railtweet
