@@ -18,4 +18,5 @@ class IrailApi
 
    return result
  end
+ 
 end
