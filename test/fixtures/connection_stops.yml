@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  connection_id: 1
+  vehicle_stop_id: 1
+
+two:
+  connection_id: 1
+  vehicle_stop_id: 1

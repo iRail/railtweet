@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  task: MyString
+  start_time: 2011-01-02 09:48:55
+  end_time: 
+  duration: 1
+  number_of_objects: 1
+
+two:
+  task: MyString
+  start_time: 2011-01-02 09:48:55
+  end_time: 
+  duration: 1
+  number_of_objects: 1

@@ -1,0 +1,25 @@
+fr:
+  calculating_connections_info: Nous sommes entrain de tracer les connections. Ca peut prendre quelques minutes.
+  delay_tolerance: Avertir De
+  delay_tolerance_hint: Indique les minutes a partir de lequel les Tweets sont envoyées.
+  from_station: "Départ"
+  l_trains: Trains L
+  ic_trains: Trains IC
+  ir_trains: Trains IR
+  register_with_twitter: Registrer avec Twitter
+  signed_in: Registré
+  signed_out: Déconnecté
+  signout: Déconnecter
+  signin_with_twitter: Connecter avec Twitter
+  to_station: Destination
+  tweets_active: Activer les Tweets
+  update: Actualiser
+  way_back_end: "Voyage Retour Fin"
+  way_back_start: "Voyage Retour Début"
+  way_there_end: "Voyage Aller Fin"
+  way_there_start: "Voyage Aller Début"
+  regions:
+    flemish: Flandres
+    french: Wallonie
+    brussels: Bruxelles
+    german: Alemand

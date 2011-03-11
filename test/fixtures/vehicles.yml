@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  complete_number: MyString
+  train_type: MyString
+  train_number: MyString
+
+two:
+  complete_number: MyString
+  train_type: MyString
+  train_number: MyString

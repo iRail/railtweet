@@ -1,0 +1,270 @@
+= border_radius_6
+  :-moz-border-radius 6px
+  :-webkit-border-radius 6px
+  :-khtml-border-radius 6px
+  :border-radius 6px
+
+= border_radius_3
+  :-moz-border-radius 3px
+  :-webkit-border-radius 3px
+  :-khtml-border-radius 3px
+  :border-radius 3px
+
+= debug
+  :border 1px dashed red
+
+body
+  :margin auto
+  :font-family Helvetica, Arial, sans-serif
+  
+  .spacer
+    :clear both
+  
+  .spacer_left
+    :clear left
+  
+  header, footer, aside, nav, article  
+    :display block
+  #header_bar
+    :background black
+    header
+      :color #D3D3D3
+      :padding 4px
+      :height 40px
+      :margin auto
+      :width 1060px
+      :font-size 11px
+    
+      a
+        :color white
+        :text-decoration none
+        &:hover
+          :textcolor = white
+        &:visited 
+          :color = white
+        
+      .item
+        :padding 4px 4px
+        :margin 8px 6px 0px 6px
+      .railtweet
+        :font-size 16px
+        :padding 4px 4px
+        :margin 5px 6px 0px 6px
+      .name_item
+        :padding 4px 4px
+        :margin 8px 6px 0px 0px
+      .image_item
+        :padding 0px 0px
+        :margin 8px 0px 0px 6px
+        img
+          :height 26px
+      .right
+        :float right
+      .left
+        :float left
+  
+  section
+    :display block
+    :color black
+    :margin auto
+    :width 1060px
+    
+    #flash
+      :margin 20px 20px 0px 20px
+      +border_radius_6
+      :background #F3F3F3
+      :padding 15px 20px
+      
+      .notice
+        :color green
+      .alert
+        :color orange
+      
+    article
+      #trip_info
+        :float left
+        :width 360px
+        :margin 20px 0px 0px 20px
+        +border_radius_6
+        :background #F3F3F3
+        :padding 15px 0px 15px 20px
+        
+        p
+          :padding 15px 20px
+          :font-size 12px
+          
+        .station_title
+          :margin 10px 0px        
+        .delayed
+          :color red
+        .normal
+          :color green
+        .cancelled
+          :color gray
+          :text-decoration line-through
+        .left
+          :color gray
+        .hour
+          :float left
+          :width 45px
+        .station
+          :float left
+          :width 170px
+        .vehicle
+          :float left
+          :width 75px
+        .platform
+          :float left
+          :width 30px
+        .delay
+          :float left
+          :width 40px
+        
+          
+      #explanation
+        :float right
+        :width 600px
+        :margin 20px 20px 0px 0px
+        +border_radius_6
+        :background #F3F3F3
+        
+        p
+          :padding 15px 20px
+          :font-size 16px
+        
+      #form
+        :float right
+        :width 600px
+        :margin 20px 20px 0px 0px
+        +border_radius_6
+        :background #F3F3F3
+        
+        .simple_form 
+          :padding 30px 20px
+
+          label
+            :display block
+            :float left
+            :text-align right
+            :margin-top 2px
+            :margin-bottom 2px
+            :margin-right 10px
+            :width 140px
+          input, select
+            :display block
+            :float left
+          input[type=checkbox]
+            :display block
+            :float right
+          input[type=submit]
+            :margin-top 10px
+            :margin-bottom 2px
+            :margin-left 150px
+          .input
+            :float left
+            :margin-bottom 2px
+            :margin-top 2px
+
+          .error 
+            :clear left
+            :margin-left 150px
+            :font-size 12px
+            :color white
+            :display block
+
+          .hint
+            :clear left
+            :margin-left 150px
+            :font-size 12px
+            :color #555
+            :display block
+            :font-style italic
+        
+        
+    #back
+      :margin 20px 10px
+      :width 960px
+      
+      table
+        :border-collapse collapse
+
+        tr:nth-of-type(even)
+          :background-color #F8F8F8
+
+        tr:nth-of-type(odd)
+          :background-color #F3F3F3
+
+        th
+          :border none
+          :background-color black
+          :color white
+          
+          a
+            :color = white
+            &:hover
+              :color = white
+            &:visited
+              :color = white
+
+        td
+          :border none
+          :padding 2px 10px
+
+        
+      
+      #search
+        :padding 20px
+        :margin 10px 0px
+        :background #F3F3F3
+        +border_radius_6
+        
+      .pagination
+        :float left
+        :margin-top 2px
+        :margin-bottom 2px
+        
+      .simple_form 
+        :padding 30px 0px
+        
+        label
+          :display block
+          :float left
+          :text-align right
+          :margin-top 2px
+          :margin-bottom 2px
+          :margin-right 10px
+          :width 100px
+        input, select
+          :display block
+          :float left
+        input[type=checkbox]
+          :display block
+          :float right
+        input[type=submit]
+          :margin-top 10px
+          :margin-bottom 2px
+          :margin-left 110px
+        .input
+          :float left
+          :margin-bottom 2px
+          :margin-top 2px
+
+        .error 
+          :clear left
+          :margin-left 110px
+          :font-size 12px
+          :color white
+          :display block
+
+        .hint
+          :clear left
+          :margin-left 110px
+          :font-size 12px
+          :color #555
+          :display block
+          :font-style italic
+
+      
+        
+        
+  

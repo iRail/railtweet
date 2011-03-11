@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,6 +8,41 @@ gem 'rails', '3.0.0'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'jquery-rails'
+
+gem 'formtastic' #, :git => "git://github.com/justinfrench/formtastic.git", :branch => "rails3"
+gem 'haml'
+gem 'haml-rails'
+gem 'omniauth'
+
+gem 'responders'
+gem 'rails3-jquery-autocomplete', '>= 0.2.0'
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+# in processor.rb
+# 46:sprintf("%s,%d,%d%s", File.basename(basename, extension), $$, n.to_i, extension)
+# =>sprintf("%s,%d,%d%s", File.basename(basename, extension)+Time.new.seconds_since_midnight.to_s, $$, n.to_i, extension)
+gem 'rubyzip'
+gem 'daemons'
+gem 'delayed_job', :git =>"http://github.com/collectiveidea/delayed_job.git"
+gem 'god'
+gem 'pdf-writer', :git => 'http://github.com/metaskills/pdf-writer.git'
+gem 'acts-as-taggable-on'
+gem 'will_paginate', '3.0.pre2'
+gem 'simple_form'
+gem "meta_search"
+
+gem 'libxml-ruby'
+gem 'uuidtools'
+gem 'exifr'
+
+group :development do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'capistrano'
+  gem 'rails3-generators'
+end
+
+group :production do
+  gem 'mysql', '2.8.1'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

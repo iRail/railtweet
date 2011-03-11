@@ -1,0 +1,229 @@
+body {
+  margin: auto;
+  font-family: Helvetica, Arial, sans-serif; }
+  body .spacer {
+    clear: both; }
+  body .spacer_left {
+    clear: left; }
+  body header, body footer, body aside, body nav, body article {
+    display: block; }
+  body #header_bar {
+    background: black; }
+    body #header_bar header {
+      color: #d3d3d3;
+      padding: 4px;
+      height: 40px;
+      margin: auto;
+      width: 1060px;
+      font-size: 11px; }
+      body #header_bar header a {
+        color: white;
+        text-decoration: none; }
+        body #header_bar header a:hover {
+          textcolor: white; }
+        body #header_bar header a:visited {
+          color: white; }
+      body #header_bar header .item {
+        padding: 4px 4px;
+        margin: 8px 6px 0px 6px; }
+      body #header_bar header .railtweet {
+        font-size: 16px;
+        padding: 4px 4px;
+        margin: 5px 6px 0px 6px; }
+      body #header_bar header .name_item {
+        padding: 4px 4px;
+        margin: 8px 6px 0px 0px; }
+      body #header_bar header .image_item {
+        padding: 0px 0px;
+        margin: 8px 0px 0px 6px; }
+        body #header_bar header .image_item img {
+          height: 26px; }
+      body #header_bar header .right {
+        float: right; }
+      body #header_bar header .left {
+        float: left; }
+  body section {
+    display: block;
+    color: black;
+    margin: auto;
+    width: 1060px; }
+    body section #flash {
+      margin: 20px 20px 0px 20px;
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -khtml-border-radius: 6px;
+      border-radius: 6px;
+      background: #f3f3f3;
+      padding: 15px 20px; }
+      body section #flash .notice {
+        color: green; }
+      body section #flash .alert {
+        color: orange; }
+    body section article #trip_info {
+      float: left;
+      width: 360px;
+      margin: 20px 0px 0px 20px;
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -khtml-border-radius: 6px;
+      border-radius: 6px;
+      background: #f3f3f3;
+      padding: 15px 0px 15px 20px; }
+      body section article #trip_info p {
+        padding: 15px 20px;
+        font-size: 12px; }
+      body section article #trip_info .station_title {
+        margin: 10px 0px; }
+      body section article #trip_info .delayed {
+        color: red; }
+      body section article #trip_info .normal {
+        color: green; }
+      body section article #trip_info .cancelled {
+        color: gray;
+        text-decoration: line-through; }
+      body section article #trip_info .left {
+        color: gray; }
+      body section article #trip_info .hour {
+        float: left;
+        width: 45px; }
+      body section article #trip_info .station {
+        float: left;
+        width: 170px; }
+      body section article #trip_info .vehicle {
+        float: left;
+        width: 75px; }
+      body section article #trip_info .platform {
+        float: left;
+        width: 30px; }
+      body section article #trip_info .delay {
+        float: left;
+        width: 40px; }
+    body section article #explanation {
+      float: right;
+      width: 600px;
+      margin: 20px 20px 0px 0px;
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -khtml-border-radius: 6px;
+      border-radius: 6px;
+      background: #f3f3f3; }
+      body section article #explanation p {
+        padding: 15px 20px;
+        font-size: 16px; }
+    body section article #form {
+      float: right;
+      width: 600px;
+      margin: 20px 20px 0px 0px;
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -khtml-border-radius: 6px;
+      border-radius: 6px;
+      background: #f3f3f3; }
+      body section article #form .simple_form {
+        padding: 30px 20px; }
+        body section article #form .simple_form label {
+          display: block;
+          float: left;
+          text-align: right;
+          margin-top: 2px;
+          margin-bottom: 2px;
+          margin-right: 10px;
+          width: 140px; }
+        body section article #form .simple_form input, body section article #form .simple_form select {
+          display: block;
+          float: left; }
+        body section article #form .simple_form input[type=checkbox] {
+          display: block;
+          float: right; }
+        body section article #form .simple_form input[type=submit] {
+          margin-top: 10px;
+          margin-bottom: 2px;
+          margin-left: 150px; }
+        body section article #form .simple_form .input {
+          float: left;
+          margin-bottom: 2px;
+          margin-top: 2px; }
+        body section article #form .simple_form .error {
+          clear: left;
+          margin-left: 150px;
+          font-size: 12px;
+          color: white;
+          display: block; }
+        body section article #form .simple_form .hint {
+          clear: left;
+          margin-left: 150px;
+          font-size: 12px;
+          color: #555555;
+          display: block;
+          font-style: italic; }
+    body section #back {
+      margin: 20px 10px;
+      width: 960px; }
+      body section #back table {
+        border-collapse: collapse; }
+        body section #back table tr:nth-of-type(even) {
+          background-color: #f8f8f8; }
+        body section #back table tr:nth-of-type(odd) {
+          background-color: #f3f3f3; }
+        body section #back table th {
+          border: none;
+          background-color: black;
+          color: white; }
+          body section #back table th a {
+            color: white; }
+            body section #back table th a:hover {
+              color: white; }
+            body section #back table th a:visited {
+              color: white; }
+        body section #back table td {
+          border: none;
+          padding: 2px 10px; }
+      body section #back #search {
+        padding: 20px;
+        margin: 10px 0px;
+        background: #f3f3f3;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -khtml-border-radius: 6px;
+        border-radius: 6px; }
+      body section #back .pagination {
+        float: left;
+        margin-top: 2px;
+        margin-bottom: 2px; }
+      body section #back .simple_form {
+        padding: 30px 0px; }
+        body section #back .simple_form label {
+          display: block;
+          float: left;
+          text-align: right;
+          margin-top: 2px;
+          margin-bottom: 2px;
+          margin-right: 10px;
+          width: 100px; }
+        body section #back .simple_form input, body section #back .simple_form select {
+          display: block;
+          float: left; }
+        body section #back .simple_form input[type=checkbox] {
+          display: block;
+          float: right; }
+        body section #back .simple_form input[type=submit] {
+          margin-top: 10px;
+          margin-bottom: 2px;
+          margin-left: 110px; }
+        body section #back .simple_form .input {
+          float: left;
+          margin-bottom: 2px;
+          margin-top: 2px; }
+        body section #back .simple_form .error {
+          clear: left;
+          margin-left: 110px;
+          font-size: 12px;
+          color: white;
+          display: block; }
+        body section #back .simple_form .hint {
+          clear: left;
+          margin-left: 110px;
+          font-size: 12px;
+          color: #555555;
+          display: block;
+          font-style: italic; }

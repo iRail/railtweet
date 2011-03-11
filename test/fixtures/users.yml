@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  provider: MyString
+  uid: MyString
+  name: MyString
+  nick_name: MyString
+  nick_name: MyString
+  image: MyString
+  way_there_slot_start: 2010-12-22 18:32:40
+  way_there_slot_end: 2010-12-22 18:32:40
+  way_back_slot_start: 2010-12-22 18:32:40
+  way_back_slot_end: 2010-12-22 18:32:40
+  tweets_active: false
+  include_l: false
+  include_ir: false
+  include_ic: false
+  delay_tolerance: 1
+
+two:
+  provider: MyString
+  uid: MyString
+  name: MyString
+  nick_name: MyString
+  nick_name: MyString
+  image: MyString
+  way_there_slot_start: 2010-12-22 18:32:40
+  way_there_slot_end: 2010-12-22 18:32:40
+  way_back_slot_start: 2010-12-22 18:32:40
+  way_back_slot_end: 2010-12-22 18:32:40
+  tweets_active: false
+  include_l: false
+  include_ir: false
+  include_ic: false
+  delay_tolerance: 1

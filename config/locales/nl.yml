@@ -1,0 +1,30 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+nl:
+  calculating_connections_info: We zijn de verbindingen aan het opzoeken, dit kan enkele minuten duren.
+  delay_tolerance: Waarschuw Vanaf
+  delay_tolerance_hint: Duidt het aantal minuten vertraging aan, vanaf dewelke Tweets verstuurd zullen worden.
+  explanation: RailTweet zal op werkdagen alle vertragingen op je heen- en terugreis doortweeten. 
+  start_stop: Je kan de tweets deactiveren/ractiveren op deze website of door een reply te doen naar @RailTweet met het woordje "stop" en terug activeren met het woordje "start".
+  from_station: Vertrek
+  l_trains: L Treinen
+  ic_trains: IC Treinen
+  ir_trains: IR Treinen
+  register_with_twitter: Registreer met Twitter
+  signed_in: Aangemeld
+  signed_out: Afgemeld
+  signout: Afmelden
+  signin_with_twitter: Aanmelden met Twitter
+  to_station: Bestemming
+  tweets_active: Activeer Tweets
+  update: Update
+  way_back_end: Terugweg Einde
+  way_back_start: Terugweg Start
+  way_there_end: Heenweg Einde
+  way_there_start: Heenweg Start
+  regions:
+    flemish: Vlaanderen
+    french: Wallonië
+    brussels: Brussel
+    german: Duitstalig
