@@ -1,0 +1,38 @@
+#back
+  = link_to 'New One way trip', new_one_way_trip_path
+  
+  = simple_form_for @search do |f|
+    #search
+      = f.input :from_station_id_equals, :collection=>Station.select(current_language), :label_method => "name_#{current_language}", :required => false, :label => "From"
+      .spacer
+      
+      = f.input :to_station_id_equals, :collection=>Station.select(current_language), :label_method => "name_#{current_language}", :required => false, :label => "To"
+      .spacer
+
+      = f.submit "Zoek"
+      .spacer
+
+    .pagination
+      = will_paginate @one_way_trips
+    .spacer
+  
+  %table
+    %tr
+      %th 
+        = sort_link @search, "from_station_name_#{current_language}", "From"
+      %th
+        = sort_link @search, "to_station_name_#{current_language}", "To"
+      %th
+      %th
+      %th
+
+    - @one_way_trips.each do |one_way_trip|
+      %tr
+        %td= one_way_trip.from_station.try "name_#{current_language}"
+        %td= one_way_trip.to_station.try "name_#{current_language}"
+        %td= link_to 'Show', one_way_trip
+        %td= link_to 'Edit', edit_one_way_trip_path(one_way_trip)
+        %td= link_to 'Destroy', one_way_trip, :confirm => 'Are you sure?', :method => :delete
+
+  %br
+

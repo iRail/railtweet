@@ -1,0 +1,41 @@
+= simple_form_for @user do |f|
+  = f.input :provider, :input_html => { :disabled => is_disabled }
+  = f.input :uid, :input_html => { :disabled => is_disabled }
+  .spacer
+  = f.input :name, :input_html => { :disabled => is_disabled }
+  = f.input :nickname, :input_html => { :disabled => is_disabled }
+  .spacer
+  = f.input :image, :input_html => { :disabled => is_disabled }
+  .spacer
+  = f.input :language, :as => :select, :collection => languages_select, :input_html => { :disabled => is_disabled }
+  .spacer
+  =f.association :from_station, :label => "from Code", :collection=>Station.select(current_language), :label_method => "name_#{current_language}", :input_html => { :disabled => is_disabled }
+  .spacer
+  =f.association :to_station, :label => "to Code", :collection=>Station.select(current_language), :label_method => "name_#{current_language}", :input_html => { :disabled => is_disabled }
+  .spacer
+  =f.input :way_there_slot_start_hour  , :as => :select , :collection => (0..23), :input_html => {:disabled => is_disabled }, :label => "Way Start"
+  =f.input :way_there_slot_start_min   , :as => :select , :collection => (0..59).step(5), :input_html => {:disabled => is_disabled }, :label => false
+  
+  =f.input :way_there_slot_end_hour    , :as => :select , :collection => (00..23), :input_html => {:disabled => is_disabled }, :label => "End"
+  =f.input :way_there_slot_end_min     , :as => :select , :collection => (00..59).step(5), :input_html => {:disabled => is_disabled }, :label => false
+  
+  .spacer
+  =f.input :way_back_slot_start_hour   , :as => :select , :collection => (0..23), :input_html => {:disabled => is_disabled }, :label => "Back Start"
+  =f.input :way_back_slot_start_min    , :as => :select , :collection => (0..59).step(5), :input_html => {:disabled => is_disabled }, :label => false
+  =f.input :way_back_slot_end_hour     , :as => :select , :collection => (0..23), :input_html => {:disabled => is_disabled }, :label => "End"
+  =f.input :way_back_slot_end_min      , :as => :select , :collection => (0..59).step(5), :input_html => {:disabled => is_disabled }, :label => false
+  .spacer                                                                    
+  
+  
+  = f.input :include_l, :as=>:boolean, :input_html => { :disabled => is_disabled }, :label => "L"
+  = f.input :include_ir, :as=>:boolean, :input_html => { :disabled => is_disabled }, :label => "IR"
+  = f.input :include_ic, :as=>:boolean, :input_html => { :disabled => is_disabled }, :label => "IC"
+  .spacer
+  .spacer
+  = f.input :delay_tolerance,  :as => :select , :collection => (0..20).step(5), :input_html => { :disabled => is_disabled }
+  .spacer
+  
+  = f.input :tweets_active, :as=>:boolean, :input_html => { :disabled => is_disabled }
+  .spacer
+  
+  = f.submit 'Save'

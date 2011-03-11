@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Task:
+  = @tracking.task
+%p
+  %b Start time:
+  = @tracking.start_time
+%p
+  %b End time:
+  = @tracking.end_time
+%p
+  %b Duration:
+  = @tracking.duration
+%p
+  %b Number of objects:
+  = @tracking.number_of_objects
+
+= link_to 'Edit', edit_tracking_path(@tracking)
+\|
+= link_to 'Back', trackings_path

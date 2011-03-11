@@ -1,0 +1,44 @@
+#back
+  = link_to 'New Connection', new_connection_path
+  
+  %table
+    %tr
+      %th
+        One Way Trip
+      %th
+        Departure Time
+      %th
+        Train Type
+      %th
+        Train Number
+      %th
+        Platform
+      %th
+        Act.Platform
+      %th
+        Let
+      %th
+        Delay
+      %th
+        Via
+      %th
+      %th
+      %th
+
+    - @connections.each do |connection|
+      %tr
+        %td= connection.one_way_trip.try :name
+        %td= l(connection.departure.departure_time, :format => :short) if connection.departure.departure_time
+        %td= connection.departure.vehicle.train_type
+        %td= connection.departure.vehicle.train_number
+        %td= connection.departure.platform
+        %td= connection.departure.actual_platform
+        %td= connection.departure.has_left
+        %td= connection.departure.actual_delay
+        %td= connection.via_id
+
+        %td= link_to 'Show', connection
+        %td= link_to 'Edit', edit_connection_path(connection)
+        %td= link_to 'Destroy', connection, :confirm => 'Are you sure?', :method => :delete
+        
+

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Complete number:
+  = @vehicle.complete_number
+%p
+  %b Train type:
+  = @vehicle.train_type
+%p
+  %b Train number:
+  = @vehicle.train_number
+
+= link_to 'Edit', edit_vehicle_path(@vehicle)
+\|
+= link_to 'Back', vehicles_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Vehicle:
+  = @vehicle_stop.vehicle_id
+%p
+  %b Station:
+  = @vehicle_stop.station_id
+
+= link_to 'Edit', edit_vehicle_stop_path(@vehicle_stop)
+\|
+= link_to 'Back', vehicle_stops_path

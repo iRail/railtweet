@@ -1,0 +1,27 @@
+%h1 Listing trackings
+
+%table
+  %tr
+    %th Task
+    %th Start time
+    %th End time
+    %th Duration
+    %th Number of objects
+    %th
+    %th
+    %th
+
+  - @trackings.each do |tracking|
+    %tr
+      %td= tracking.task
+      %td= tracking.start_time
+      %td= tracking.end_time
+      %td= tracking.duration
+      %td= tracking.number_of_objects
+      %td= link_to 'Show', tracking
+      %td= link_to 'Edit', edit_tracking_path(tracking)
+      %td= link_to 'Destroy', tracking, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Tracking', new_tracking_path

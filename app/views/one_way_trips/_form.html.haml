@@ -1,0 +1,8 @@
+= simple_form_for @one_way_trip do |f|
+  =f.association :from_station, :label => "from Code", :collection=>Station.select(current_language), :label_method => "name_#{current_language}", :input_html => { :disabled => is_disabled }
+  .spacer
+  =f.association :to_station, :label => "to Code", :collection=>Station.select(current_language), :label_method => "name_#{current_language}", :input_html => { :disabled => is_disabled }
+  .spacer
+
+
+  = f.submit 'Save'

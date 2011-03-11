@@ -1,0 +1,15 @@
+= simple_form_for @station do |f|
+  = f.input :code, :input_html => { :disabled => is_disabled }
+  .spacer
+  = f.input :code_nmbs, :input_html => { :disabled => is_disabled }
+  .spacer
+  = f.input :name_nl, :input_html => { :disabled => is_disabled }
+  .spacer
+  = f.input :name_fr, :input_html => { :disabled => is_disabled }
+  .spacer
+  = f.input :name_en, :input_html => { :disabled => is_disabled }
+  .spacer
+  = f.input :region, :as=>:select, :collection => t('regions').invert, :input_html => { :disabled => is_disabled }
+  .spacer
+  
+  = f.submit 'Save'

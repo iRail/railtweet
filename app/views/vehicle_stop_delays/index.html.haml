@@ -1,0 +1,23 @@
+%h1 Listing vehicle_stop_delays
+
+%table
+  %tr
+    %th Vehicle stop
+    %th Delay
+    %th Is cancelled
+    %th
+    %th
+    %th
+
+  - @vehicle_stop_delays.each do |vehicle_stop_delay|
+    %tr
+      %td= vehicle_stop_delay.vehicle_stop_id
+      %td= vehicle_stop_delay.delay
+      %td= vehicle_stop_delay.is_cancelled
+      %td= link_to 'Show', vehicle_stop_delay
+      %td= link_to 'Edit', edit_vehicle_stop_delay_path(vehicle_stop_delay)
+      %td= link_to 'Destroy', vehicle_stop_delay, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Vehicle stop delay', new_vehicle_stop_delay_path

@@ -1,0 +1,37 @@
+!!! Strict
+%html
+  %head
+    %title Railtweet
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+
+  %body
+    #header_bar
+      %header
+        .item.railtweet.left
+          = link_to("RailTweet", root_url)
+        - if is_admin
+          = render '/layouts/admin_menu'
+        - if current_user
+          .item.right
+            = link_to t('signout'), signout_path
+          .name_item.right
+            = current_user.name
+          .image_item.right
+            = image_tag current_user.image
+        - else
+          .item.right
+            = link_to t('signin_with_twitter'), "/auth/twitter"
+        .item.right
+          = link_to "nl", :language => 'nl'
+        .item.right
+          = link_to "fr", :language => 'fr'
+        .item.right
+          = link_to "en", :language => 'en'
+    %section
+      - flash.each do |name, msg|
+        #flash
+          = content_tag :div, msg, :class=> "#{name}"
+      = yield
+    

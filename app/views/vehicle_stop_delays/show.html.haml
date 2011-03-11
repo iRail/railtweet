@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Vehicle stop:
+  = @vehicle_stop_delay.vehicle_stop_id
+%p
+  %b Delay:
+  = @vehicle_stop_delay.delay
+%p
+  %b Is cancelled:
+  = @vehicle_stop_delay.is_cancelled
+
+= link_to 'Edit', edit_vehicle_stop_delay_path(@vehicle_stop_delay)
+\|
+= link_to 'Back', vehicle_stop_delays_path

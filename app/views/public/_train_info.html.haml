@@ -1,0 +1,21 @@
+- if connections = source.connections.last(10) and connections.size > 0
+  - connections.each do |connection|
+    %div{:class=>connection.departure.status}
+      .hour
+        = l(connection.departure.departure_time,:format=>:time)
+      .station
+        = truncate(connection.departure.vehicle.to_station.try("name_#{current_language}"), :length=>15)
+        (
+        = connection.departure.vehicle.to_station.try :code
+        )
+      .vehicle
+        = connection.departure.vehicle.train_type
+        = connection.departure.vehicle.train_number
+      .platform
+        = connection.departure.platform
+      .delay
+        = connection.departure.actual_delay_in_minutes if connection.departure.actual_delay_in_minutes and connection.departure.actual_delay_in_minutes != 0 
+      .spacer
+- else
+  #wait
+    = t('calculating_connections_info')

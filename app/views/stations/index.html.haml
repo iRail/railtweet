@@ -1,0 +1,47 @@
+#back
+  = link_to 'New Station', new_station_path
+
+  = simple_form_for @search do |f|
+    #search
+      = f.input :any_name, :required => false, :label => "Name"
+      = f.input :code_contains, :required => false, :label => "Code"
+      .spacer
+      = f.input :region_eq, :as=>:select, :collection => t('regions').invert, :required => false, :label => "Region"
+      .spacer
+
+      = f.submit "Zoek"
+      .spacer
+
+    .pagination
+      = will_paginate @stations
+    .spacer
+
+    %table
+      %tr
+        %th 
+          = sort_link @search, :code
+        %th 
+          = sort_link @search, :name_nl
+        %th 
+          = sort_link @search, :name_fr
+        %th 
+          = sort_link @search, :name_en
+        %th 
+          = sort_link @search, :region
+        %th
+        %th
+        %th
+
+      - @stations.each do |station|
+        %tr
+          %td= station.code
+          %td= station.name_nl
+          %td= station.name_fr
+          %td= station.name_en
+          %td= t("regions.#{station.region}")
+          %td= link_to 'Show', station
+          %td= link_to 'Edit', edit_station_path(station)
+          %td= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete
+
+    %br
+

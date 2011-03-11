@@ -1,0 +1,55 @@
+#back
+  = link_to 'New User', new_user_path
+
+  = simple_form_for @search do |f|
+    #search
+      = f.input :name_contains, :required => false, :label => "Name"
+      = f.input :nickname_contains, :required => false, :label => "Nickname"
+      .spacer
+      = f.input :from_station_id_equals, :collection=>Station.select(current_language), :label_method => "name_#{current_language}", :required => false, :label => "From"
+      .spacer
+      = f.input :to_station_id_equals, :collection=>Station.select(current_language), :label_method => "name_#{current_language}", :required => false, :label => "To"
+      .spacer
+      = f.input :tweets_active_is_true, :as=>:boolean, :required => false, :label => "Active Only"
+      .spacer
+
+      = f.submit "Zoek"
+      .spacer
+
+    .pagination
+      = will_paginate @users
+    .spacer
+
+    %table
+      %tr
+        %th 
+          = sort_link @search, :provider
+        %th 
+          = sort_link @search, :name
+        %th 
+          = sort_link @search, :nickname
+        %th
+          = sort_link @search, "from_station_name_#{current_language}", "From"
+        %th
+          = sort_link @search, "to_station_name_#{current_language}", "To"
+        %th
+          = sort_link @search, :tweets_active
+        %th
+          = sort_link @search, :delay_tolerance
+        %th
+        %th
+        %th
+
+      - @users.each do |user|
+        %tr
+          %td= user.provider
+          %td= user.name
+          %td= user.nickname
+          %td= user.from_station.try "name_#{current_language}"
+          %td= user.to_station.try "name_#{current_language}"
+          %td= user.tweets_active
+          %td= user.delay_tolerance
+          %td= link_to 'Show', user
+          %td= link_to 'Edit', edit_user_path(user)
+          %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+

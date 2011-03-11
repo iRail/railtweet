@@ -1,0 +1,39 @@
+#back
+
+  = link_to 'New Vehicle stop', new_vehicle_stop_path
+  
+  %table
+    %tr
+      %th
+        = sort_link @search, "station_name_#{current_language}"
+      %th
+        = sort_link @search, :stop_date
+      %th
+        = sort_link @search, :departure_time
+      %th
+        = sort_link @search, :arrival_time
+      %th
+        = sort_link @search, :platform, "Pl"
+      %th
+        = sort_link @search, :vehicle_train_type, "Ty"
+      %th
+        = sort_link @search, :vehicle_train_number, "No"
+
+      %th
+      %th
+      %th
+
+    - @vehicle_stops.each do |vehicle_stop|
+      %tr
+        %td= vehicle_stop.station.try "name_#{current_language}"
+        %td= l( vehicle_stop.stop_date) if vehicle_stop.stop_date
+        %td= l( vehicle_stop.departure_time, :format=>:short) if vehicle_stop.departure_time
+        %td= l( vehicle_stop.arrival_time, :format=>:short) if vehicle_stop.arrival_time
+        %td= vehicle_stop.platform
+        %td= vehicle_stop.vehicle.train_type
+        %td= vehicle_stop.vehicle.train_number
+
+        %td= link_to 'Show', vehicle_stop
+        %td= link_to 'Edit', edit_vehicle_stop_path(vehicle_stop)
+        %td= link_to 'Destroy', vehicle_stop, :confirm => 'Are you sure?', :method => :delete
+

@@ -1,0 +1,60 @@
+%article
+  - if current_user
+    #trip_info
+      = render :partial => 'trip_info'
+
+    
+  #explanation
+    %p
+      = t('explanation')
+      %br
+      %br
+      = t('start_stop')
+  #form
+    = simple_form_for @user, :url => { :controller => "public", :action => "update" } do |f|
+      =f.association :from_station, :label => t("from_station"), :collection=>Station.select(current_language), :label_method => "name_#{current_language}"
+      .spacer
+      =f.association :to_station, :label => t("to_station"), :collection=>Station.select(current_language), :label_method => "name_#{current_language}"
+      .spacer
+          
+      =f.input :way_there_slot_start_hour  , :as => :select , :collection => (0..23), :label => t("way_there_start")
+      =f.input :way_there_slot_start_min   , :as => :select , :collection => (0..59).step(5), :label => false
+                                                                                   
+      =f.input :way_there_slot_end_hour    , :as => :select , :collection => (0..23), :label => t("way_there_end")
+      =f.input :way_there_slot_end_min     , :as => :select , :collection => (0..59).step(5), :label => false
+                                                                                   
+      .spacer                                                                      
+      =f.input :way_back_slot_start_hour   , :as => :select , :collection => (0..23), :label => t("way_back_start")
+      =f.input :way_back_slot_start_min    , :as => :select , :collection => (0..59).step(5), :label => false
+      =f.input :way_back_slot_end_hour     , :as => :select , :collection => (0..23), :label => t("way_back_end")
+      =f.input :way_back_slot_end_min      , :as => :select , :collection => (0..59).step(5), :label => false
+      .spacer
+
+      = f.input :include_ic, :as=>:boolean, :label => t("ic_trains")
+      = f.input :include_ir, :as=>:boolean, :label => t("ir_trains")
+      = f.input :include_l, :as=>:boolean, :label => t("l_trains")
+      .spacer
+      = f.input :delay_tolerance,  :as => :select , :collection => (0..20).step(5), :label => t("delay_tolerance"), :hint =>  t("delay_tolerance_hint")
+      .spacer
+
+      = f.input :tweets_active, :as=>:boolean, :label => t("tweets_active")
+      
+      .spacer
+      - unless current_user
+        = f.submit t('register_with_twitter')
+      - else
+        = f.submit t('update')
+      .spacer
+      
+:javascript
+
+  $(function() {
+    if ($("#trip_info").length > 0) {
+      setTimeout(updateTripInfo, 10000);
+    }
+  });
+
+  function updateTripInfo () {
+    $.getScript("trip_info.js")
+    setTimeout(updateTripInfo, 10000);
+  }

@@ -1,0 +1,19 @@
+= form_for @vehicle_stop_delay do |f|
+  -if @vehicle_stop_delay.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vehicle_stop_delay.errors.count, "error")} prohibited this vehicle_stop_delay from being saved:"
+      %ul
+        - @vehicle_stop_delay.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :vehicle_stop_id
+    = f.text_field :vehicle_stop_id
+  .field
+    = f.label :delay
+    = f.text_field :delay
+  .field
+    = f.label :is_cancelled
+    = f.check_box :is_cancelled
+  .actions
+    = f.submit 'Save'

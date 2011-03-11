@@ -1,0 +1,11 @@
+- if @way_there
+  #way_there
+    .station_title
+      = @way_there.from_station.try "name_#{current_language}"
+  = render 'train_info', :source => @way_there
+
+- if @way_back
+  #way_back
+    .station_title
+      = @way_back.from_station.try "name_#{current_language}"
+  = render 'train_info', :source => @way_back
